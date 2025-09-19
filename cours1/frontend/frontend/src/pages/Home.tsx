@@ -1,3 +1,4 @@
+import '../styles/Home.css';
 import type { Expense } from "../types/Expense";
 import ExpenseItem from "../components/ExpenseItem";
 
@@ -34,11 +35,13 @@ const mockExpenses: Expense[] = [
 
 export default function Home() {
     return (
-        <div>
-            <h1>Expense List</h1>
-            {mockExpenses.map((expense) => (
-                <ExpenseItem key={expense.id} expense={expense} />
-            ))}
+        <div className="expense-container">
+            <h1 className="expense-title">Expense List</h1>
+            <div className="expense-list">
+                {mockExpenses.map((expense) => (
+                    <ExpenseItem key={expense.id} expense={expense} />
+                ))}
+            </div>
         </div>
     );
 };
